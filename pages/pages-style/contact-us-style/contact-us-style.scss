@@ -1,0 +1,282 @@
+//colors
+$myYellow: #edcd1f;
+$myBlack-navbar: rgba(30, 45, 59, 0.8);
+$myBlack: rgb(30, 45, 59);
+$myGray: #f7f7f7;
+//global styles
+* {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  font-family: B Nazanin;
+  font-size: 18px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+}
+//header
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 500px;
+  z-index: -100;
+  //particles
+  #particles-js {
+    background-image: linear-gradient(
+      rgba(128, 128, 128, 0.8),
+      rgba(237, 206, 31, 0.8)
+    );
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+  }
+  #contact-header {
+    font-size: 2.5rem;
+    margin-top: 15%;
+    text-align: center;
+    position: absolute;
+    right: -35%;
+    opacity: 0;
+    animation: intro 1s ease-out;
+    animation-fill-mode: forwards;
+    .border {
+      width: 6rem;
+      height: 0.5rem;
+      background-image: linear-gradient(to right, $myGray, $myBlack);
+      border-radius: 1px;
+      margin: auto;
+      margin-top: 1.5%;
+    }
+  }
+  @keyframes intro {
+    100% {
+      right: 43%;
+      opacity: 1;
+    }
+  }
+}
+//contact us section
+.contact-us {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  background-color: $myGray;
+  .google-map {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0 10% 0;
+    margin: 5% 0 0 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2%;
+      padding-bottom: 1%;
+      border-bottom: 5px solid black;
+    }
+  }
+  //contact information & form
+  .contact {
+    width: 100%;
+    display: flex;
+    background-color: $myGray;
+    //form
+    .contact-form {
+      width: 50%;
+      background-color: $myYellow;
+      display: flex;
+      justify-content: flex-end;
+      padding: 6% 0 15% 0;
+      .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-right: 15%;
+        direction: rtl;
+        width: 60%;
+        h1 {
+          padding-bottom: 1%;
+          margin-bottom: 3%;
+          padding-top: 5%;
+          border-bottom: 5px solid $myBlack;
+          font-size: 1.5rem;
+          width: 30%;
+        }
+        input {
+          margin: 5% 0 1% 0;
+          padding: 2% 5%;
+          border: none;
+          border-radius: 2px;
+        }
+        #message {
+          height: 10em;
+          resize: vertical;
+          margin: 5% 0 0 0;
+          padding: 2% 5%;
+          border: none;
+        }
+        button {
+          width: 30%;
+          border: none;
+          background-color: $myBlack;
+          color: $myGray;
+          margin: 5% 0;
+          padding: 2% 5%;
+          cursor: pointer;
+          border-radius: 2px;
+          transition: all ease-in-out;
+        }
+        button:focus {
+          opacity: 0.75;
+        }
+      }
+    }
+    //contact information
+    .contact-info {
+      width: 30%;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 7% auto 15% auto;
+      padding: 5% 3%;
+      border: 2px solid $myBlack;
+
+      .info {
+        display: flex;
+        margin-bottom: 10%;
+
+        img {
+          margin-left: 3%;
+        }
+      }
+      .social-media {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30%;
+      }
+      .icon {
+        width: 16px;
+        height: 16px;
+        transition: all ease 0.1s;
+      }
+      .social-media .icon:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+  //footer
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: $myBlack;
+    color: $myGray;
+    padding: 1.5% 0;
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+//tablet
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 16px;
+  }
+  .navbar {
+    padding-bottom: 2%;
+    .navbar-lists {
+      display: none;
+    }
+    .ham-menu {
+      display: block;
+    }
+  }
+  .google-map {
+    padding-top: 10%;
+  }
+  .contact-us {
+    .contact {
+      flex-direction: column;
+      .contact-form {
+        width: 100%;
+        .form-wrapper {
+          margin: auto;
+          h1 {
+            margin: auto;
+            text-align: center;
+          }
+          button {
+            margin: auto;
+            margin-top: 5%;
+            padding: 2%;
+          }
+        }
+      }
+      .contact-info {
+        width: 70%;
+        align-items: center;
+        padding: 10%;
+
+        .info-wrapper {
+          padding-bottom: 13%;
+        }
+        .social-media {
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+//mobile
+@media screen and (max-width: 375px) {
+  * {
+    font-size: 12px;
+  }
+  .header {
+    @keyframes intro {
+      100% {
+        right: 35%;
+        opacity: 1;
+      }
+    }
+  }
+  .contact-us {
+    .contact {
+      display: flex;
+      flex-direction: column;
+      .contact-form {
+        width: 100%;
+        .form-wrapper {
+          margin: auto;
+          h1 {
+            width: 40%;
+          }
+          input {
+            height: 2.5rem;
+          }
+          button {
+            margin: 6% auto;
+            width: 40%;
+          }
+        }
+      }
+      .contact-info {
+        width: 70%;
+        .social-media {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
